@@ -17,4 +17,3 @@ COPY . .
 
 EXPOSE 8080
 CMD ["nodemon", "--exec babel-node server.js"]
- --exec babel-node server.js
