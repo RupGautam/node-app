@@ -20,7 +20,7 @@ app.get('/', (req,res) =>{
       res.render('index', data.artist[2])
   })
 
-const port = process.env.PORT || 5656;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
 	console.log(`http://localhost:${port}`)
 })
