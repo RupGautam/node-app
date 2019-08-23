@@ -1,16 +1,26 @@
-'use strict';
-
-const express = require('express');
-
-// Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
-
-// App
+import express from 'express';
+import data from './data/artists.json'
 const app = express();
-app.get('/', (req, res) => {
-  res.send('<h1 style="color:gray;">Java Home App - CI/CD Jenkins1234!!</h1> \n');
-});
+app.set('view engine', 'pug');
+app.use(express.static(__dirname + '/public'));
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+
+
+app.get('/', (req,res) =>{
+	res.redirect('/charles')
+})
+
+  app.get('/charles', (req, res) => {
+      res.render('index', data.artist[0])
+  })
+  app.get('/marilyn', (req, res) => {
+      res.render('index', data.artist[1])
+  })
+  app.get('/jean', (req, res) => {
+      res.render('index', data.artist[2])
+  })
+
+const port = process.env.PORT || 5656;
+app.listen(port, () => {
+	console.log(`http://localhost:${port}`)
+})
