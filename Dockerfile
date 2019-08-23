@@ -16,4 +16,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD ["nodemon", "--exec babel-node server.js"]
+ --exec babel-node server.js
