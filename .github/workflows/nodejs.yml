@@ -20,6 +20,6 @@ jobs:
     - name: npm install, start
       run: |
         npm install
-        npm start
+        node server.js
       env:
         CI: true
