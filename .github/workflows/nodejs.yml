@@ -22,6 +22,5 @@ jobs:
         npm install 
         npm install nodemon
         npm audit fix
-        npm start
       env:
         CI: true
